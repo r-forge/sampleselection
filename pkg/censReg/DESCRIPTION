@@ -1,6 +1,6 @@
 Package: censReg
-Version: 0.5-33
-Date: 2020-08-04
+Version: 0.5-34
+Date: 2022-02-27
 Title: Censored Regression (Tobit) Models
 Author: Arne Henningsen <arne.henningsen@gmail.com>
 Maintainer: Arne Henningsen <arne.henningsen@gmail.com>
