@@ -1,5 +1,16 @@
 \name{NEWS}
 \title{News for Package 'censReg'}
+\section{Changes in censReg version 0.5-34 (2022-02-27)}{
+  \itemize{
+    \item the \code{margEff()} method for objects of class \code{censReg} 
+    now has an additional argument \code{vcovLogSigma}, 
+    which defaults to \code{TRUE};
+    this change makes the \code{margEff()} method consistent 
+    with the \code{coef()} and \code{vcov()} methods 
+    but it changes the default way of calculating marginal effects
+    compared to the previous version
+  }
+}
 \section{Changes in censReg version 0.5-32 (2020-08-04)}{
   \itemize{
     \item added argument \code{subset} to function \code{censReg()}
