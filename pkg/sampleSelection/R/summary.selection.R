@@ -13,7 +13,7 @@ summary.selection <- function(object, ...) {
          ## a bit naive -- it checks for intercept
          ## in the formula, but not whether the intercept is present
          ## in any of the data vectors (or matrices)
-         if(class(model) == "lm") {
+         if( inherits( model, "lm" ) ) {
             y <- model.response(model.frame(model))
             if(intercept) {
                R2 <- 1 - sum(residuals(model)^2)/sum((y - mean(y))^2)
