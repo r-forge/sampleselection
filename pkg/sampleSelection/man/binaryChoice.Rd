@@ -102,16 +102,16 @@ maxMethod="Newton-Raphson",
     H0: the parameters (besides constant) have no effect on the result.  This is a list
     with components
     \itemize{
-    \item{LRT}{The LRT value}
-    \item{df}{Degrees of freedom for LRT (= df of the model - 1)}
+    \item LRT: The LRT value
+    \item df: Degrees of freedom for LRT (= df of the model - 1)
     }
     LRT is distributed by chi2(df) under H0.}
   \item{param}{A list with following background information:
     \itemize{
-      \item{nParam}{Number of parameters of the model including constant}
-      \item{nObs}{Number of the observations}
-      \item{N1}{Number of observations with non-zero (true) response}
-      \item{N0}{Number of observations with zero (false) response}
+      \item nParam: Number of parameters of the model including constant
+      \item nObs: Number of the observations
+      \item N1: Number of observations with non-zero (true) response
+      \item N0: Number of observations with zero (false) response
     }
   }
   \item{df.residual}{degrees of freedom of the residuals.}
