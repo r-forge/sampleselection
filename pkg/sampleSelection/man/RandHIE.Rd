@@ -106,7 +106,7 @@ since RAND HIE is the only study which can make causal statements.'
 
 \source{
    Data sets of Cameron and Trivedi (2005),
-   \url{http://cameron.econ.ucdavis.edu/mmabook/mmadata.html}.
+   \url{https://cameron.econ.ucdavis.edu/mmabook/mmadata.html}.
 
    Additional information of variables
    from Table 20.4 of Cameron and Trivedi (2005)
