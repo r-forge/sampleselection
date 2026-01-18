@@ -21,14 +21,14 @@ heckit2fit <- function( selection, outcome,
    # where outcome is not observed.  na-s cannot be passed either.
    # However, we can (and should?) omit the na-s in explanatory and probit outcomes.  This needs
    # a bit of refinement.
-   if( class( outcome ) != "formula" ) {
+   if( ! inherits( outcome, "formula" ) ) {
       stop( "argument 'outcome' must be a formula" )
    } else if( length( outcome ) != 3 ) {
       stop( "argument 'outcome' must be a 2-sided formula" )
    } else if( "invMillsRatio" %in% all.vars( outcome ) ) {
       stop( "argument 'outcome' may not include a variable name",
          " 'invMillsRatio'" )
-   } else if( class( selection ) != "formula" ) {
+   } else if( ! inherits( selection, "formula" ) ) {
       stop( "argument 'selection' must be a formula" )
    } else if( length( selection ) != 3 ) {
       stop( "argument 'selection' must be a 2-sided formula" )
@@ -36,7 +36,7 @@ heckit2fit <- function( selection, outcome,
       stop( "argument 'selection' may not include a variable",
          " names starting with 'probit'" )
    } else if( !is.null( inst ) ) {
-      if( class ( inst ) != "formula" || length( inst ) != 2 ) {
+      if( ( ! inherits( inst, "formula" ) ) || length( inst ) != 2 ) {
          stop( "argument 'inst' must be a 1-sided formula" )
       }
    }

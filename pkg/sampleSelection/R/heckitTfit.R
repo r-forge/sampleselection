@@ -11,7 +11,7 @@ heckitTfit <- function(selection, outcome,
    ## maxMethod:   probit method
    ##
    ## Do a few sanity checks...
-   if( class( selection ) != "formula" ) {
+   if( ! inherits( selection, "formula" ) ) {
       stop( "argument 'selection' must be a formula" )
    }
    if( length( selection ) != 3 ) {
