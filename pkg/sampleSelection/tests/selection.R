@@ -4,8 +4,8 @@
 ### * factor as dependent variable (yes/no)
 ### 
 library( "sampleSelection" )
-library( "mvtnorm" )
-library( "lmtest" )
+suppressPackageStartupMessages( library( "mvtnorm" ) )
+suppressPackageStartupMessages( library( "lmtest" ) )
 options( digits = 3 )
 N <- 1500
 NNA <- 5

@@ -1,5 +1,5 @@
 library( "sampleSelection" )
-library( "mvtnorm" )
+suppressPackageStartupMessages( library( "mvtnorm" ) )
 options( digits = 2 )
 
 nObs <- 300
@@ -70,7 +70,7 @@ gradStartNum <- numericGradient( intLogLik, t0 = start )
 colnames( gradStartNum ) <- names( start )
 all.equal( as.data.frame( gradStart ), as.data.frame( gradStartNum ),
    tol = 1e-5 )
-# library( "miscTools" )
+# suppressPackageStartupMessages( library( "miscTools" ) )
 # for( i in 1:ncol( gradStart ) ) {
 #    compPlot( gradStart[ , i ], gradStartNum[ , i ], main = names( start )[i],
 #       col = ifelse( !YS, "black",
@@ -183,7 +183,7 @@ spec4 <- selection( lfp ~ city + wifecoll,
 print(summary(spec4))
 
 # trying lrtest and waldtest
-library(lmtest)
+suppressPackageStartupMessages( library( "lmtest" ) )
 lrtest(spec1,spec2)
 lrtest(spec2,spec3)
 waldtest(spec1,spec2,spec3)

@@ -8,7 +8,7 @@ set.seed(0)
 
 N <- 500
 rho <- 0.7
-library( "mvtnorm" )
+suppressPackageStartupMessages( library( "mvtnorm" ) )
 eps <- rmvnorm(N, c(0,0), matrix(c(1,rho,rho,1), 2, 2) )
 simDat <- data.frame( xs = runif(N) )
 simDat$ysX <- 3 * simDat$xs + eps[,1]

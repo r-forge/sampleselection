@@ -1,7 +1,7 @@
 
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -24,7 +24,7 @@ Henningsen, Arne and Toomet, Ott (2011). maxLik: A package for maximum likelihoo
 
 If you have questions, suggestions, or comments regarding the 'maxLik' package, please use a forum or 'tracker' at maxLik's R-Forge site:
 https://r-forge.r-project.org/projects/maxlik/
-> library( "mvtnorm" )
+> suppressPackageStartupMessages( library( "mvtnorm" ) )
 > options( digits = 2 )
 > 
 > nObs <- 300
@@ -600,7 +600,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > all.equal( as.data.frame( gradStart ), as.data.frame( gradStartNum ),
 +    tol = 1e-5 )
 [1] TRUE
-> # library( "miscTools" )
+> # suppressPackageStartupMessages( library( "miscTools" ) )
 > # for( i in 1:ncol( gradStart ) ) {
 > #    compPlot( gradStart[ , i ], gradStartNum[ , i ], main = names( start )[i],
 > #       col = ifelse( !YS, "black",
@@ -1519,15 +1519,7 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 --------------------------------------------
 > 
 > # trying lrtest and waldtest
-> library(lmtest)
-Loading required package: zoo
-
-Attaching package: 'zoo'
-
-The following objects are masked from 'package:base':
-
-    as.Date, as.Date.numeric
-
+> suppressPackageStartupMessages( library( "lmtest" ) )
 > lrtest(spec1,spec2)
 Likelihood ratio test
 
@@ -1611,4 +1603,4 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > proc.time()
    user  system elapsed 
-   79.3     0.2    79.5 
+ 122.46    0.36  122.84 

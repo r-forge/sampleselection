@@ -1,7 +1,7 @@
 
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -43,17 +43,8 @@ https://r-forge.r-project.org/projects/maxlik/
 > # should be true
 > 
 > # example for bivariate probit
-> library( "mvtnorm" )
-> library( "VGAM" )
-Loading required package: stats4
-Loading required package: splines
-
-Attaching package: 'VGAM'
-
-The following object is masked from 'package:sampleSelection':
-
-    probit
-
+> suppressPackageStartupMessages( library( "mvtnorm" ) )
+> suppressPackageStartupMessages( library( "VGAM" ) )
 > set.seed( 321 )
 > 
 > nObs <- 10000
@@ -100,8 +91,6 @@ Log-likelihood: -10858 on 29993 degrees of freedom
 
 Number of Fisher scoring iterations: 2 
 
-No Hauck-Donner effect found in any of the estimates
-
 > 
 > # bivariate probit (NOT using rhobit transformation)
 > bProbit2 <- vglm( cbind( y1, y2 ) ~ x1 + x2, family = binom2.rho(
@@ -129,8 +118,6 @@ Names of linear predictors: probitlink(mu1), probitlink(mu2), rho
 Log-likelihood: -10858 on 29993 degrees of freedom
 
 Number of Fisher scoring iterations: 2 
-
-No Hauck-Donner effect found in any of the estimates
 
 > 
 > # inverse Mills Ratios
@@ -583,4 +570,4 @@ F-statistic:  841 on 2 and 5294 DF,  p-value: <2e-16
 > 
 > proc.time()
    user  system elapsed 
- 15.172   0.085  15.249 
+ 17.418   0.171  17.588 

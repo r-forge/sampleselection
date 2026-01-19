@@ -17,8 +17,8 @@ all.equal( invMillsRatio( myProbit )$IMR1, invMillsRatio( myProbit2 )$IMR0 )
 # should be true
 
 # example for bivariate probit
-library( "mvtnorm" )
-library( "VGAM" )
+suppressPackageStartupMessages( library( "mvtnorm" ) )
+suppressPackageStartupMessages( library( "VGAM" ) )
 set.seed( 321 )
 
 nObs <- 10000

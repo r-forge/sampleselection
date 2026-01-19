@@ -1,7 +1,7 @@
 
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -33,7 +33,7 @@ https://r-forge.r-project.org/projects/maxlik/
 > 
 > N <- 500
 > rho <- 0.7
-> library( "mvtnorm" )
+> suppressPackageStartupMessages( library( "mvtnorm" ) )
 > eps <- rmvnorm(N, c(0,0), matrix(c(1,rho,rho,1), 2, 2) )
 > simDat <- data.frame( xs = runif(N) )
 > simDat$ysX <- 3 * simDat$xs + eps[,1]
@@ -2448,4 +2448,4 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > proc.time()
    user  system elapsed 
-  5.048   0.104   5.145 
+  7.250   0.186   7.422 

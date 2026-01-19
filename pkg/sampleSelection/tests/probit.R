@@ -1,5 +1,5 @@
 library( "sampleSelection" )
-library( "lmtest" )
+suppressPackageStartupMessages( library( "lmtest" ) )
 options( digits = 3 )
 
 ## loading and preparing data

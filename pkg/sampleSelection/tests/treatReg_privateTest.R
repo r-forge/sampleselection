@@ -5,7 +5,7 @@ DGP <- function(N=1000, sigma=1, rho=0.8,
                 alpha0=-1, alpha1=1, alpha2=1,
                 beta0=0, beta1=1, beta2=1) {
    ## Generate random data
-   library(mvtnorm)
+   suppressPackageStartupMessages( library( "mvtnorm" ) )
    Sigma <- matrix(c(1, rho*sigma, rho*sigma, sigma^2), 2, 2)
    uv <- rmvnorm(N, mean=c(0,0), sigma=Sigma)
    u <- uv[,1]

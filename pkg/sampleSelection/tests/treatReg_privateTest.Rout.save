@@ -1,7 +1,7 @@
 
-R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
-Copyright (C) 2020 The R Foundation for Statistical Computing
-Platform: x86_64-pc-linux-gnu (64-bit)
+R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
+Copyright (C) 2025 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
 You are welcome to redistribute it under certain conditions.
@@ -22,7 +22,7 @@ Type 'q()' to quit R.
 +                 alpha0=-1, alpha1=1, alpha2=1,
 +                 beta0=0, beta1=1, beta2=1) {
 +    ## Generate random data
-+    library(mvtnorm)
++    suppressPackageStartupMessages( library( "mvtnorm" ) )
 +    Sigma <- matrix(c(1, rho*sigma, rho*sigma, sigma^2), 2, 2)
 +    uv <- rmvnorm(N, mean=c(0,0), sigma=Sigma)
 +    u <- uv[,1]
@@ -197,4 +197,4 @@ Error in attr(ll, "df") <- sum(activePar(object)) :
 > 
 > proc.time()
    user  system elapsed 
-  1.377   0.056   1.424 
+  1.623   0.128   1.739 

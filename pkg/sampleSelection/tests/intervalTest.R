@@ -1,5 +1,5 @@
 library( "sampleSelection" )
-library( "mvtnorm" )
+suppressPackageStartupMessages( library( "mvtnorm" ) )
 options( digits = 2 )
 
 nObs <- 300
