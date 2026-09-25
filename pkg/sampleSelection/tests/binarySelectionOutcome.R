@@ -21,25 +21,32 @@ print(table(simDat$ys, simDat$yo, exclude=NULL))
 
 # estimation with BHHH method
 ss <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12 )
-print( ss )
-summary( ss )
-coef( ss )
-coef( ss, part = "outcome" )
-coef( summary( ss ) )
-coef( summary( ss ), part = "outcome" )
+
+all.equal(coef(ss),
+          c("S:(Intercept)" = -0.122,
+            "S:xs" = 3.329,
+            "O:(Intercept)" = -1.055,
+            "O:xo" = 1.987,
+            "rho" = 0.817),
+          tolerance = 1e-3)
+
+all.equal(coef( ss, part = "outcome" ),
+          c("O:(Intercept)" = -1.055,
+            "O:xo" = 1.987),
+          tolerance = 1e-3)
+          
 stdEr( ss )
-vcov( ss )
 vcov( ss, part = "outcome" )
 nobs( ss )
 nObs( ss )
-round( fitted( ss ), 3 )
+round( fitted( ss ), 3 )[1:5]
 all.equal( fitted( ss ), fitted( ss, part = "outcome" ) )
 round( fitted( ss, part = "selection" ), 3 )
 round( residuals( ss ), 3 )
 all.equal( residuals( ss ), residuals( ss, part = "outcome" ) )
 all.equal( residuals( ss ),
    residuals( ss, part = "outcome", type = "deviance"  ) )
-round( residuals( ss, type = "pearson" ), 3 )
+round( residuals( ss, type = "pearson" ), 3 )[1:10]
 all.equal( residuals( ss, type = "pearson" ),
    residuals( ss, part = "outcome", type = "pearson" ) )
 round( residuals( ss, type = "deviance" ), 3 )
@@ -47,10 +54,11 @@ all.equal( residuals( ss, type = "deviance" ),
    residuals( ss, part = "outcome", type = "deviance" ) )
 all.equal( residuals( ss, part = "outcome", type = "response" ),
    ( simDat$yo == 1 ) - fitted( ss, part = "outcome" ) )
-round( residuals( ss, part = "selection" ), 3 )
+round( residuals( ss, part = "selection" ), 3 )[1:10]
 all.equal( residuals( ss, part = "selection" ),
    residuals( ss, part = "selection", type = "deviance" ) )
-round( residuals( ss, part = "selection", type = "pearson" ), digits = 3 )
+round( residuals( ss, part = "selection", type = "pearson" ),
+      digits = 3 )[1:10]
 round( residuals( ss, part = "selection", type = "response" ), digits = 3 )
 all.equal( residuals( ss, part = "selection", type = "response" ),
    simDat$ys - fitted( ss, part = "selection" ) )

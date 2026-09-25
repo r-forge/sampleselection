@@ -2,11 +2,14 @@
 \alias{coef.selection}
 \alias{coef.summary.selection}
 \alias{print.coef.selection}
+\alias{stdEr}
+\alias{nObs}
 
 \title{Extract Coefficients from Selection Models}
 
 \description{
-  This function extracts coefficients
+  These functions extract coefficients, standard errors and the number
+  of observations
   from sample selection models
 }
 

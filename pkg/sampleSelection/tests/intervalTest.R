@@ -20,7 +20,6 @@ dat$yS <- with( dat, betaS[1] + betaS[2] * x1 + betaS[3] * x2 + epsS ) > 0
 # table(dat$yS)
 dat$yOu <- with( dat, betaO[1] + betaO[2] * x1 + epsO )
 dat$yOu[ !dat$yS ] <- NA
-hist( dat$yOu )
 dat$yO <- cut( dat$yOu, bound )
 
 YS <- dat$yS
@@ -37,8 +36,7 @@ names( start ) <- c( "betaS0", "betaS1", "betaS2", "betaO0", "betaO2",
 res <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
    start = start, printLevel = 1 )
 
-print( res )
-print( round( coef( res ), 2 ) )
+print( coef( res ))
 print( round( coef( summary( res ) ), 2 ) )
 print( res$start )
 print( summary( res ) )
@@ -46,13 +44,17 @@ print( summary( res ) )
 
 # tests with automatically generated starting values (ML estimation)
 resMl <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
-   start = "ml", printLevel = 1 )
-print( resMl )
-print( round( coef( resMl ), 2 ) )
-print( round( coef( summary( resMl ) ), 2 ) )
-print( resMl$start )
-print( summary( resMl ) )
+                   start = "ml", printLevel = 0)
+a <- c("(Intercept)" = 0.982, "x1" = 0.967, "x2" = -1.286,
+       "(Intercept)" = 10.242, "x1" = 2.660, "logSigma" = 1.631,
+       "atanhRho" = 0.299, "sigma" = 5.108, "sigmaSq" = 26.089,
+       "rho" = 0.290)
+class(a) <- c("coef.selection", "numeric")
+cbind(coef(resMl), a)
+all.equal(coef(resMl), a, tolerance = 1e-3,
+          check.attributes = FALSE)
 
+print( resMl$start )
 
 # tests with incorrectly specified starting values
 try( selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 

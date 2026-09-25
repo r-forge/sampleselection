@@ -79,7 +79,7 @@ library( "VGAM" )
 nObs <- 1000
 
 # error terms (trivariate normal)
-sigma <- symMatrix( c( 2, 0.7, 1.2, 1, 0.5, 1 ) )
+sigma <- miscTools::symMatrix( c( 2, 0.7, 1.2, 1, 0.5, 1 ) )
 myData <- as.data.frame( rmvnorm( nObs, c( 0, 0, 0 ), sigma ) )
 names( myData ) <- c( "e0", "e1", "e2" )
 
