@@ -17,4 +17,4 @@ Enhances: sampleSelection
 Description: Maximum Likelihood estimation of censored regression (Tobit) models
    with cross-sectional and panel data.
 License: GPL (>= 2)
-URL: http://www.sampleSelection.org
+URL: https://r-forge.r-project.org/projects/sampleselection/
