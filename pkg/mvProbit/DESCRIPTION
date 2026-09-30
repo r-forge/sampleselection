@@ -12,4 +12,4 @@ Description: Tools for estimating multivariate probit models,
    and calculating marginal effects on conditional and unconditional
    expectations.
 License: GPL (>= 2)
-URL: http://www.sampleSelection.org
+URL: https://r-forge.r-project.org/projects/sampleselection/
