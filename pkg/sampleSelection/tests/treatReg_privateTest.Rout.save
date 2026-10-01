@@ -1,6 +1,6 @@
 
-R version 4.5.0 (2025-04-11) -- "How About a Twenty-Six"
-Copyright (C) 2025 The R Foundation for Statistical Computing
+R version 4.6.1 (2026-06-24) -- "Happy Hop"
+Copyright (C) 2026 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu
 
 R is free software and comes with ABSOLUTELY NO WARRANTY.
@@ -36,14 +36,6 @@ Type 'q()' to quit R.
 + }
 > 
 > library(sampleSelection)
-Loading required package: maxLik
-Loading required package: miscTools
-
-Please cite the 'maxLik' package as:
-Henningsen, Arne and Toomet, Ott (2011). maxLik: A package for maximum likelihood estimation in R. Computational Statistics 26(3), 443-458. DOI 10.1007/s00180-010-0217-1.
-
-If you have questions, suggestions, or comments regarding the 'maxLik' package, please use a forum or 'tracker' at maxLik's R-Forge site:
-https://r-forge.r-project.org/projects/maxlik/
 > # the following command makes sure that sample() returns the same pseudo-random
 > # numbers in R 3.5.X and in R-devel  
 > suppressWarnings( RNGversion( "3.5.0" ) )
@@ -181,20 +173,20 @@ predicted and actual outcomes
 > # same treatment variable but a different name in the outcome equation
 > dat$yD <- dat$yS
 > try( selection( yS ~ x + z, yO ~ yD + x, data = dat ) )
-Error in attr(ll, "df") <- sum(activePar(object)) : 
-  attempt to set an attribute on NULL
+Error in maxNRCompute(fn = function (theta, fnOrig, gradOrig = NULL, hessOrig = NULL,  : 
+  Missings in the initial value computed at 'start'
 > msD <- selection( yS ~ x + z, yO ~ yD + x, data = dat, type = "treatment",
 +    mfs = TRUE, mfo = TRUE )
 > # all.equal( m[ names( m ) != "call" ], msD[ names( msD ) != "call" ] )
 > # estimate the model as tobit-2 model
 > try( selection( yS ~ x + z, yO ~ yS + x, data = dat, type = "2" ) )
-Error in attr(ll, "df") <- sum(activePar(object)) : 
-  attempt to set an attribute on NULL
+Error in maxNRCompute(fn = function (theta, fnOrig, gradOrig = NULL, hessOrig = NULL,  : 
+  Missings in the initial value computed at 'start'
 > try( selection( yS ~ x + z, yO ~ yD + x, data = dat, type = "2" ) )
-Error in attr(ll, "df") <- sum(activePar(object)) : 
-  attempt to set an attribute on NULL
+Error in maxNRCompute(fn = function (theta, fnOrig, gradOrig = NULL, hessOrig = NULL,  : 
+  Missings in the initial value computed at 'start'
 > 
 > 
 > proc.time()
    user  system elapsed 
-  1.623   0.128   1.739 
+  1.809   0.437   1.716 
