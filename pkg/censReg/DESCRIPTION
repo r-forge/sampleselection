@@ -5,7 +5,8 @@ Title: Censored Regression (Tobit) Models
 Authors@R: person( given = "Arne",
                     family = "Henningsen",
                     role = c("aut", "cre"),
-                    email = "arne.henningsen@gmail.com" )
+                    email = "arne.henningsen@gmail.com",
+      comment = c( ORCID = "0000-0002-6720-0264" )
 Author: Arne Henningsen [aut, cre]
 Maintainer: Arne Henningsen <arne.henningsen@gmail.com>
 BugReports: https://r-forge.r-project.org/projects/sampleselection/
