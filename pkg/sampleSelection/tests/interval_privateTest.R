@@ -1,4 +1,6 @@
 library( "sampleSelection" )
+library( "miscTools" )
+library( "maxLik" )
 suppressPackageStartupMessages( library( "mvtnorm" ) )
 options( digits = 2 )
 
@@ -89,21 +91,22 @@ print( gradEst )
 
 # tests with automatically generated starting values (ML estimation)
 resMl <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
-   start = "ml", printLevel = 1 )
+   start = "ml", printLevel = 1, reltol = 1.4901e-08 )
 print( resMl )
 print( round( coef( resMl ), 2 ) )
 print( round( coef( summary( resMl ) ), 2 ) )
 print( resMl$start )
 print( summary( resMl ) )
 
-resMl2 <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound )
+resMl2 <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
+   reltol = 1.4901e-08 )
 all.equal( resMl[ !names( resMl ) %in% c( "call", "control", "objectiveFn" ) ],
    resMl2[ !names( resMl2 ) %in% c( "call", "control", "objectiveFn" ) ] )
 
 
 # tests with automatically generated starting values (2-step estimation)
 res2s <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
-   start = "2step", printLevel = 1 )
+   start = "2step", printLevel = 1, reltol = 1.4901e-08 )
 print( res2s )
 print( round( coef( res2s ), 2 ) )
 print( round( coef( summary( res2s ) ), 2 ) )
@@ -128,16 +131,16 @@ try( selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = 4:1,
 bound <- c(-Inf,4.9,5,15,Inf)
 dat$yO <- cut( dat$yOu, br = bound )
 empty1 <- selection( yS ~ x1 + x2, as.integer(yO) ~ x1, data = dat,
-   boundaries = bound, start = start, printLevel = 1 )
+   boundaries = bound, start = start, printLevel = 1, reltol = 1.4901e-08 )
 
 # Test estimation with empty interval and yO as numeric variable
 empty2 <- selection( yS ~ x1 + x2, as.numeric(yO) ~ x1, data = dat,
-   boundaries = bound, start = start, printLevel = 1 )
+   boundaries = bound, start = start, printLevel = 1, reltol = 1.4901e-08 )
 all.equal( coef(empty1), coef(empty2) )
 
 # Test estimation with empty interval and yO as factor
 empty3 <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
-   start = start, printLevel = 1 )
+   start = start, printLevel = 1, reltol = 1.4901e-08 )
 all.equal( coef(empty1), coef(empty3) )
 
 
@@ -152,7 +155,7 @@ print(NAres1)
 # NAs in dependent variable
 dat$yS[dat$x1 > 1.1 & dat$x1 < 1.4] <- NA
 NAres2 <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound, 
-   start = start, printLevel = 1 )
+   start = start, printLevel = 1, reltol = 1.4901e-08 )
 print(NAres2)
 
 
@@ -174,12 +177,14 @@ print(summary(spec2))
 
 # adding dummy variables (city, huscoll)
 spec3 <- selection( lfp ~ huswage + mtr + fatheduc + educ + city + huscoll, 
-   wage_5interval ~ educ + exper + city, data = Mroz87, boundaries = bounds)
+   wage_5interval ~ educ + exper + city, data = Mroz87, boundaries = bounds, 
+   reltol = 1.4901e-08 )
 print(summary(spec3))
 
 # only dummy variables as indepdent variables
 spec4 <- selection( lfp ~ city + wifecoll, 
-   wage_5interval ~ city, data = Mroz87, boundaries = bounds)
+   wage_5interval ~ city, data = Mroz87, boundaries = bounds, 
+   reltol = 1.4901e-08 )
 print(summary(spec4))
 
 # trying lrtest and waldtest
