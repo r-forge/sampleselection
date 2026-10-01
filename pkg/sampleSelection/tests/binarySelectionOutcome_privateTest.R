@@ -20,7 +20,7 @@ simDat$yo <- factor( (simDat$yoX > 0) * (simDat$ys > 0))
 print(table(simDat$ys, simDat$yo, exclude=NULL))
 
 # estimation with BHHH method
-ss <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12 )
+ss <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12, reltol = 1.4901e-08 )
 print( ss )
 summary( ss )
 coef( ss )
@@ -98,7 +98,8 @@ all.equal( coef( ssWeBFGS ), coef( ssBFGS ), tol = 1e-2 )
 
 # BHHH estimation with unequal weights
 simDat$wu <- 2 * runif( N )
-ssWu <- selection( ys ~ xs, yo ~ xo, weights = simDat$wu, data = simDat )
+ssWu <- selection( ys ~ xs, yo ~ xo, weights = simDat$wu, data = simDat, 
+   reltol = 1.4901e-08 )
 summary( ssWu )
 
 # BFGS estimation with unequal weights
@@ -119,21 +120,24 @@ print( rbind( logLik( ss ), logLik( ssBFGS ), logLik( ssWe ),
 # binary outcome NA if unobserved
 simDat$yo[ !simDat$ys ] <- NA
 print(table(simDat$ys, simDat$yo, exclude=NULL))
-ssN <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12 )
+ssN <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12, 
+   reltol = 1.4901e-08 )
 print(summary(ssN))
 all.equal( ss[-c(13,16)], ssN[-c(13,16)] )
 
 # binary outcome logical
 simDat$yo <- simDat$yoX > 0 & simDat$ys
 print(table(simDat$ys, simDat$yo, exclude=NULL))
-ssL <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12 )
+ssL <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12,
+   reltol = 1.4901e-08 )
 print(summary(ssL))
 all.equal( ss[-c(13,16)], ssL[-c(13,16)] )
 
 # binary outcome logical and NA if unobserved
 simDat$yo[ !simDat$ys ] <- NA
 print(table(simDat$ys, simDat$yo, exclude=NULL))
-ssLN <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12 )
+ssLN <- selection( ys ~ xs, yo ~ xo, data = simDat, steptol = 1e-12, 
+   reltol = 1.4901e-08 )
 print(summary(ssLN))
 all.equal( ss[-c(13,16)], ssLN[-c(13,16)] )
 
