@@ -1,4 +1,5 @@
 library( "sampleSelection" )
+library( "miscTools" )
 options( digits = 3 )
 
 ## Wooldridge( 2003 ): example 17.5, page 590
