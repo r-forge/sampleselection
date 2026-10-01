@@ -15,7 +15,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> library( "sampleSelection" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > suppressPackageStartupMessages( library( "mvtnorm" ) )
 > options( digits = 3 )
 > set.seed( 123 )
@@ -111,4 +111,4 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > proc.time()
    user  system elapsed 
-  1.347   0.613   1.079 
+  1.424   0.481   1.281 

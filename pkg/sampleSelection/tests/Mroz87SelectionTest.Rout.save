@@ -15,7 +15,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> library( "sampleSelection" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > suppressPackageStartupMessages( library( "lmtest" ) )
 > data( "Mroz87" )
 > options( digits = 3 )
@@ -15457,4 +15457,4 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > proc.time()
    user  system elapsed 
-  2.064   0.694   1.862 
+  2.675   0.518   2.608 

@@ -1,4 +1,4 @@
-library( "sampleSelection" )
+suppressPackageStartupMessages( library( "sampleSelection" ) )
 
 try( selection( s ~ z1, y ~ x1, type = "w" ) )
 

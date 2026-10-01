@@ -15,8 +15,8 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> library( "sampleSelection" )
-> library( "miscTools" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
+> suppressPackageStartupMessages( library( "miscTools" ) )
 > options( digits = 3 )
 > 
 > ## Wooldridge( 2003 ): example 17.5, page 590
@@ -563,4 +563,4 @@ F-statistic:  841 on 2 and 5294 DF,  p-value: <2e-16
 > 
 > proc.time()
    user  system elapsed 
-  15.70    3.44   13.49 
+  16.58    3.22   14.55 

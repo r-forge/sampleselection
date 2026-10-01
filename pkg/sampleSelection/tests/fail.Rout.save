@@ -15,7 +15,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> library( "sampleSelection" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > 
 > try( selection( s ~ z1, y ~ x1, type = "w" ) )
 Error in checkModelType(type, selection, outcome) : 
@@ -144,4 +144,4 @@ in function 'selection()'.  Currently a list of length 2
 > 
 > proc.time()
    user  system elapsed 
-  1.214   0.603   0.964 
+  1.285   0.437   1.124 

@@ -1,6 +1,6 @@
-library( "sampleSelection" )
-library( "miscTools" )
-library( "maxLik" )
+suppressPackageStartupMessages( library( "sampleSelection" ) )
+suppressPackageStartupMessages( library( "miscTools" ) )
+suppressPackageStartupMessages( library( "maxLik" ) )
 suppressPackageStartupMessages( library( "mvtnorm" ) )
 options( digits = 2 )
 

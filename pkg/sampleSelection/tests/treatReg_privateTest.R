@@ -18,7 +18,7 @@ DGP <- function(N=1000, sigma=1, rho=0.8,
    data.frame(yO, yS, x, z, ySX, u, v)
 }
 
-library(sampleSelection)
+suppressPackageStartupMessages( library( "sampleSelection" ) )
 # the following command makes sure that sample() returns the same pseudo-random
 # numbers in R 3.5.X and in R-devel  
 suppressWarnings( RNGversion( "3.5.0" ) )

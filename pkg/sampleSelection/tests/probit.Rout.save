@@ -15,7 +15,7 @@ Type 'demo()' for some demos, 'help()' for on-line help, or
 'help.start()' for an HTML browser interface to help.
 Type 'q()' to quit R.
 
-> library( "sampleSelection" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > suppressPackageStartupMessages( library( "lmtest" ) )
 > options( digits = 3 )
 > 
@@ -6904,4 +6904,4 @@ chi2(1) = 2.98 (p=0.0844)
 > 
 > proc.time()
    user  system elapsed 
-   1.68    0.68    1.43 
+  1.863   0.466   1.768 

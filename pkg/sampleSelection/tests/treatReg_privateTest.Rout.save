@@ -35,7 +35,7 @@ Type 'q()' to quit R.
 +    data.frame(yO, yS, x, z, ySX, u, v)
 + }
 > 
-> library(sampleSelection)
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > # the following command makes sure that sample() returns the same pseudo-random
 > # numbers in R 3.5.X and in R-devel  
 > suppressWarnings( RNGversion( "3.5.0" ) )
@@ -189,4 +189,4 @@ Error in maxNRCompute(fn = function (theta, fnOrig, gradOrig = NULL, hessOrig = 
 > 
 > proc.time()
    user  system elapsed 
-  1.809   0.437   1.716 
+  1.417   0.416   1.301 

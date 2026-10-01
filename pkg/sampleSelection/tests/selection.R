@@ -3,7 +3,7 @@
 ###
 ### * factor as dependent variable (yes/no)
 ### 
-library( "sampleSelection" )
+suppressPackageStartupMessages( library( "sampleSelection" ) )
 suppressPackageStartupMessages( library( "mvtnorm" ) )
 suppressPackageStartupMessages( library( "lmtest" ) )
 options( digits = 3 )

@@ -1,4 +1,4 @@
-library( "sampleSelection" )
+suppressPackageStartupMessages( library( "sampleSelection" ) )
 suppressPackageStartupMessages( library( "lmtest" ) )
 data( "Mroz87" )
 options( digits = 3 )

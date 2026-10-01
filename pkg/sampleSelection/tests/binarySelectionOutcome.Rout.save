@@ -17,7 +17,7 @@ Type 'q()' to quit R.
 
 > 
 > options( digits = 3 )
-> library( "sampleSelection" )
+> suppressPackageStartupMessages( library( "sampleSelection" ) )
 > set.seed(0)
 >                            # Note: library() may change RNG state!
 > 
@@ -2053,4 +2053,4 @@ Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 > 
 > proc.time()
    user  system elapsed 
-  5.360   0.581   5.058 
+  6.399   0.507   6.271 
