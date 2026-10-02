@@ -38,7 +38,7 @@ for panel data using Gauss-Hermite quadrature.
   University of Copenhagen\\
   1958 Frederiksberg, Denmark\\
   E-mail: \email{arne.henningsen@gmail.com}\\
-  URL: \url{http://www.arne-henningsen.name/}
+  URL: \url{https://www.arne-henningsen.name/}
 }
 
 \begin{document}
