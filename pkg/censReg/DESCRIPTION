@@ -1,6 +1,6 @@
 Package: censReg
-Version: 0.5-39
-Date: 2024-04-20
+Version: 0.5-40
+Date: 2026-10-01
 Title: Censored Regression (Tobit) Models
 Authors@R: person( given = "Arne",
                     family = "Henningsen",
