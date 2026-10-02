@@ -1,5 +1,11 @@
 \name{NEWS}
 \title{News for Package 'censReg'}
+\section{Changes in censReg version 0.5-40 (2026-10-01)}{
+  \itemize{
+    \item made tests robust to changes in the future version of the maxLik package
+    \item a few minor changes in the documentation
+  }
+}
 \section{Changes in censReg version 0.5-38 (2024-04-20)}{
   \itemize{
     \item removed a test that gives slightly different results on CRAN's "M1mac"
