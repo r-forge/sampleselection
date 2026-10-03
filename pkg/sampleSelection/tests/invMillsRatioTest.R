@@ -41,7 +41,8 @@ myData$y2 <- ( -0.1 + 0.6 * myData$x1 + 0.7 * myData$x2 + myData$e2 ) > 0
 # bivariate probit (using rhobit transformation)
 bProbit <- vglm( cbind( y1, y2 ) ~ x1 + x2, family = binom2.rho,
    data = myData )
-summary( bProbit )
+sbProbit <- summary( bProbit )
+suppressWarnings( print( sbProbit ) )
 
 # inverse Mills Ratios
 imr  <- invMillsRatio( bProbit )

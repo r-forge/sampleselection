@@ -59,7 +59,8 @@ Type 'q()' to quit R.
 > # bivariate probit (using rhobit transformation)
 > bProbit <- vglm( cbind( y1, y2 ) ~ x1 + x2, family = binom2.rho,
 +    data = myData )
-> summary( bProbit )
+> sbProbit <- summary( bProbit )
+> suppressWarnings( print( sbProbit ) )
 
 Call:
 vglm(formula = cbind(y1, y2) ~ x1 + x2, family = binom2.rho, 
@@ -531,4 +532,4 @@ F-statistic:  841 on 2 and 5294 DF,  p-value: <2e-16
 > 
 > proc.time()
    user  system elapsed 
-   8.57    1.82    7.50 
+   8.83    1.84    7.78 
