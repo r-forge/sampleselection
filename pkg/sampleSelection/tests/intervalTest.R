@@ -37,9 +37,9 @@ res <- selection( yS ~ x1 + x2, yO ~ x1, data = dat, boundaries = bound,
    start = start, printLevel = 1 )
 
 print( coef( res ))
-print( round( coef( summary( res ) ), 2 ) )
+suppressWarnings( print( round( coef( summary( res ) ), 2 ) ) )
 print( res$start )
-print( summary( res ) )
+suppressWarnings( print( summary( res ) ) )
 
 
 # tests with automatically generated starting values (ML estimation)

@@ -82,7 +82,7 @@ S:(Intercept)           S:x1           S:x2  O:(Intercept)           O:x1
         0.982          0.967         -1.286         10.241          2.659  
      logSigma       atanhRho          sigma        sigmaSq            rho  
         1.631          0.298          5.108         26.088          0.290  
-> print( round( coef( summary( res ) ), 2 ) )
+> suppressWarnings( print( round( coef( summary( res ) ), 2 ) ) )
             Estimate Std. Error t value Pr(>|t|)
 (Intercept)     0.98       0.11    9.05     0.00
 x1              0.97       0.15    6.48     0.00
@@ -99,7 +99,7 @@ rho             0.29       0.33    0.87     0.38
        1.00        1.00       -1.00       10.00        4.00        0.80 
    atanhRho 
        0.42 
-> print( summary( res ) )
+> suppressWarnings( print( summary( res ) ) )
 --------------------------------------------
 Tobit 2 model with interval outcome (sample selection model)
 Maximum Likelihood estimation
@@ -186,4 +186,4 @@ Error in tobit2Intfit(YS, XS, YO, XO, boundaries = boundaries, start = start,  :
 > 
 > proc.time()
    user  system elapsed 
-   7.52    0.47    7.36 
+   7.91    0.45    7.74 
