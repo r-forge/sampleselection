@@ -4,6 +4,14 @@ Please note that only the most significant changes are reported here.
 A full ChangeLog is available in the log messages of the SVN repository
 on R-Forge.
 
+   CHANGES IN VERSION 1.2-16 (2026-10-01)
+
+* The sampleSelection package now imports the maxLik package (instead of 
+   depending on it)
+   
+* Made tests more robust to changes in other packages
+
+
    CHANGES IN VERSION 1.2-14 (2026-01-19)
 
 * internal changes: a few minor improvements in the code, documentation,
